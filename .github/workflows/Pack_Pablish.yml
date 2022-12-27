@@ -26,10 +26,10 @@ jobs:
       run: msbuild Wastegate.Framework.Peripheral.sln -t:build -p:Configuration=Release -p:Platform=x64 -p:Platform=ARM -p:Platform=X86 -m -restore
 
     - name: Nuget restore pack
-    - run: nuget restore Wastegate.Framework.Peripheral.sln
+      run: nuget restore Wastegate.Framework.Peripheral.sln
     
     - name: Nuget create pack.nuget
-    - run: nuget pack pcf8574.nuspec
+      run: nuget pack pcf8574.nuspec
     
     - name: Nuget publish
-    - run: nuget push -ApiKey ${{ secrets.GITHUB_TOKEN }}
+      run: nuget push -ApiKey ${{ secrets.GITHUB_TOKEN }}
