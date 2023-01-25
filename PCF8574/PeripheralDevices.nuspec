@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Wastegate.Framework.Peripheral</id>
+    <version>0.0.2</version>
+    <title>Wastegate.Framework.Peripheral</title>
+    <authors>Wastegate</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/wastegate711/UwpLibrary.git</projectUrl>
+    <icon>Images\west-logos_white.png</icon>
+    <description>Framework содержит библиотеки для взаимодействия с переферийными устройствами
+       RTC, Display Drivers, PWM controllers, Multiplexor.</description>
+    <releaseNotes>Рефакторинг и мелкие изменения(логику не затрагивают).</releaseNotes>
+    <copyright>Wastegate 2022</copyright>
+    <tags>UWP Raspberry I2C SPI PWM RTC Drivers</tags>
+    <dependencies>
+      <group targetFramework="UAP10.0">
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Images\west-logos_white.png" target="Images"/>
+    <file src="bin\Release\PeripheralDevices.xml" target="lib\uap10.0"/>
+    <file src="bin\ARM\Release\PeripheralDevices.dll" target="lib\uap10.0"/>
+  </files>
+</package>
