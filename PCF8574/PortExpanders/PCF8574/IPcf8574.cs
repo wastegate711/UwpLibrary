@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Windows.Devices.I2c;
 
-namespace PortExpanders.PCF8574
+namespace PeripheralDevices.PortExpanders.PCF8574
 {
     public interface IPcf8574
     {

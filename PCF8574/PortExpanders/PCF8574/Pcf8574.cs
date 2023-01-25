@@ -5,7 +5,7 @@ using Windows.Devices.Enumeration;
 using Windows.Devices.Gpio;
 using Windows.Devices.I2c;
 
-namespace PortExpanders.PCF8574
+namespace PeripheralDevices.PortExpanders.PCF8574
 {
     public class Pcf8574 : IPcf8574, IDisposable
     {

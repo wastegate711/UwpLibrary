@@ -7,8 +7,8 @@
     <ProjectGuid>{1FA9E2BE-E7D8-4749-821A-6DD191574B63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCF8574</RootNamespace>
-    <AssemblyName>PCF8574</AssemblyName>
+    <RootNamespace>PeripheralDevices</RootNamespace>
+    <AssemblyName>PeripheralDevices</AssemblyName>
     <DefaultLanguage>ru-RU</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
@@ -26,7 +26,7 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\PCF8574.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\PeripheralDevices.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,7 +36,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\PCF8574.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\PeripheralDevices.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -122,8 +122,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IPcf8574.cs" />
-    <Compile Include="Pcf8574.cs" />
+    <Compile Include="PortExpanders\PCF8574\IPcf8574.cs" />
+    <Compile Include="PortExpanders\PCF8574\Pcf8574.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\PCF8574.rd.xml" />
   </ItemGroup>
@@ -138,8 +138,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PCF8574.nuspec" />
+    <None Include="PeripheralDevices.nuspec" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
