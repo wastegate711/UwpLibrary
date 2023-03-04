@@ -122,6 +122,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="PortExpanders\MCP23017\IMpc23017.cs" />
+    <Compile Include="PortExpanders\MCP23017\Mcp23017.cs" />
+    <Compile Include="PortExpanders\MCP23017\Registers.cs" />
     <Compile Include="PortExpanders\PCF8574\IPcf8574.cs" />
     <Compile Include="PortExpanders\PCF8574\Pcf8574.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
