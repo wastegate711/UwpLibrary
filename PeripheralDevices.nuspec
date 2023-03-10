@@ -7,7 +7,7 @@
     <authors>Wastegate</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/wastegate711/UwpLibrary.git</projectUrl>
+    <projectUrl>https://github.com/wastegate711/Wastegate.Framework.Peripheral.git</projectUrl>
     <icon>Images\west-logos_white.png</icon>
     <description>Framework содержит библиотеки для взаимодействия с переферийными устройствами
        RTC, Display Drivers, PWM controllers, Multiplexor.</description>
