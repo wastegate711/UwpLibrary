@@ -21,7 +21,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Images\west-logos_white.png" target="Images"/>
+    <file src="..\Release\Images\west-logos_white.png" target="Images"/>
     <file src="PCF8574\bin\Release\PeripheralDevices.xml" target="lib\uap10.0"/>
     <file src="PCF8574\bin\ARM\Release\PeripheralDevices.dll" target="lib\uap10.0"/>
   </files>
