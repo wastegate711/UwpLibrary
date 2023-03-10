@@ -29,7 +29,7 @@ jobs:
       run: nuget restore Wastegate.Framework.Peripheral.sln
     
     - name: Nuget create pack.nuget
-      run: nuget pack pcf8574.nuspec
+      run: nuget pack PeripheralDevices.nuspec
     
     - name: Nuget publish
       run: nuget push -ApiKey ${{ secrets.GITHUB_TOKEN }}
