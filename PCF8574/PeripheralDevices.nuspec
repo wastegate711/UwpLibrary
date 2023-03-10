@@ -11,7 +11,7 @@
     <icon>Images\west-logos_white.png</icon>
     <description>Framework содержит библиотеки для взаимодействия с переферийными устройствами
        RTC, Display Drivers, PWM controllers, Multiplexor.</description>
-    <releaseNotes>Рефакторинг и мелкие изменения(логику не затрагивают).</releaseNotes>
+    <releaseNotes>Добавил библиотеку PCF8575</releaseNotes>
     <copyright>Wastegate 2022</copyright>
     <tags>UWP Raspberry I2C SPI PWM RTC Drivers</tags>
     <dependencies>
