@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Wastegate.Framework.Peripheral</id>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <title>Wastegate.Framework.Peripheral</title>
     <authors>Wastegate</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,7 +11,7 @@
     <icon>Images\west-logos_white.png</icon>
     <description>Framework содержит библиотеки для взаимодействия с переферийными устройствами
        RTC, Display Drivers, PWM controllers, Multiplexor.</description>
-    <releaseNotes>Первый релиз, добавил библиотеку для управления мультиплексором pcf8574.</releaseNotes>
+    <releaseNotes>Добавил библиотеку PCF8575</releaseNotes>
     <copyright>Wastegate 2022</copyright>
     <tags>UWP Raspberry I2C SPI PWM RTC Drivers</tags>
     <dependencies>
@@ -22,7 +22,7 @@
   </metadata>
   <files>
     <file src="bin\Release\Images\west-logos_white.png" target="Images"/>
-    <file src="bin\Release\PCF8574.xml" target="lib\uap10.0"/>
-    <file src="bin\ARM\Release\PCF8574.dll" target="lib\uap10.0"/>
+    <file src="bin\Release\PeripheralDevices.xml" target="lib\uap10.0"/>
+    <file src="bin\ARM\Release\PeripheralDevices.dll" target="lib\uap10.0"/>
   </files>
 </package>

@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Windows.Devices.I2c;
 
-namespace PortExpanders.PCF8574
+namespace PeripheralDevices.PortExpanders.PCF8575
 {
-    public interface IPcf8574
+    public interface IPcf8575
     {
         /// <summary>
         /// Событие генерируется на любом восходящем или нисходящем
@@ -12,7 +12,7 @@ namespace PortExpanders.PCF8574
         /// Прерывание сбрасывается на высокий уровень, когда данные в порту изменяются на исходные настройки или
         /// данные считываются или записываются ведущим устройством.
         /// </summary>
-        event Action<byte> PinChanged;
+        event Action<byte[]> PinChanged;
 
         /// <summary>
         /// Получает I2C контроллер по умолчанию (в Raspberry pi 2 и 3 это I2С1)
@@ -28,8 +28,10 @@ namespace PortExpanders.PCF8574
         /// <param name="address">Адрес устройства.</param>
         /// <param name="pinInterrupt">Номер вывода к которому подключен вывод микросхемы "Interrupt".</param>
         /// <param name="busSpeed">Скорость I2C шины.</param>
+        /// <param name="timeout">Фильтр дребезга контактов</param>
         /// <returns>Если дескрипторы получены вернет true, иначе false.</returns>
-        Task<bool> Initialization(int address, int pinInterrupt, I2cBusSpeed busSpeed = I2cBusSpeed.StandardMode);
+        Task<bool> Initialization(int address, int pinInterrupt,
+            I2cBusSpeed busSpeed = I2cBusSpeed.StandardMode, TimeSpan timeout = default);
 
         /// <summary>
         /// Получает I2C контроллер.
@@ -47,8 +49,10 @@ namespace PortExpanders.PCF8574
         /// <param name="address">Адрес устройства.</param>
         /// <param name="pinNumber">Номер вывода к которому подключен вывод микросхемы "Interrupt".</param>
         /// <param name="busSpeed">Скорость.</param>
+        /// <param name="timeout">Фильтр дребезга контактов</param>
         /// <returns>Если дескрипторы получены вернет true, иначе false.</returns>
-        Task<bool> Initialization(string interfaceName, int address, int pinNumber, I2cBusSpeed busSpeed = I2cBusSpeed.StandardMode);
+        Task<bool> Initialization(string interfaceName, int address, int pinInterrupt,
+            I2cBusSpeed busSpeed = I2cBusSpeed.StandardMode, TimeSpan timeout = default);
 
         /// <summary>
         /// Удаляет объекты и закрывает дескрипторы.
@@ -59,13 +63,19 @@ namespace PortExpanders.PCF8574
         /// Управляет состоянием выводов микросхемы.
         /// </summary>
         /// <param name="pin">Номер вывода микросхемы на котором нужно утановить 0 или 1
-        /// можно представить в виде битового представления 0b0000_0000</param>
-        void SetPinState(byte pin);
+        /// можно представить в виде битового представления 0b0000_0000_0000_0000</param>
+        void SetPinState(ushort pin);
 
         /// <summary>
         /// Считывает состояние выводов микросхемы.
         /// </summary>
-        /// <returns>Возвращает состояние всех выводов в виде байта.</returns>
-        byte ReadPinState();
+        /// <returns>Возвращает состояние всех выводов в виде массива байт, где нулевой элемент массива
+        /// это порты от 0 до 7, а первый элемент содержит порты от 10 до 17.</returns>
+        byte[] ReadPinState();
+
+        /// <summary>
+        /// Делает сброс состояния выводов.
+        /// </summary>
+        void ResetState();
     }
 }
