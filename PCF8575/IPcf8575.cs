@@ -47,7 +47,7 @@ namespace PCF8575
         /// </summary>
         /// <param name="interfaceName">Имя контроллера (пример "i2c1" или "i2c2")</param>
         /// <param name="address">Адрес устройства.</param>
-        /// <param name="pinNumber">Номер вывода к которому подключен вывод микросхемы "Interrupt".</param>
+        /// <param name="pinInterrupt">Номер вывода к которому подключен вывод микросхемы "Interrupt".</param>
         /// <param name="busSpeed">Скорость.</param>
         /// <param name="timeout">Фильтр дребезга контактов</param>
         /// <returns>Если дескрипторы получены вернет true, иначе false.</returns>

@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CE131C8E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCF8575", "PCF8575\PCF8575.csproj", "{940A0F9D-39DC-4993-AB6F-7FBA5E96A6E8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{41F1F672-7D76-4C99-B595-A334B0111F87}"
+	ProjectSection(SolutionItems) = preProject
+		PCF8574\Images\west-logos_white.png = PCF8574\Images\west-logos_white.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
