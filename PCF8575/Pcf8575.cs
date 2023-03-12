@@ -1,13 +1,13 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.Gpio;
 using Windows.Devices.I2c;
 
 namespace PCF8575
 {
-    public class Pcf8575 : IPcf8575
+    public class Pcf8575:IPcf8575
     {
         private I2cDevice _pcf8575;
         private GpioPin _interrupt;
