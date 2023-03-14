@@ -18,7 +18,7 @@ namespace MAX7219
         /// <summary>
         /// Инициализация и настройка подключения к драйверу и получение контроллера SPI.
         /// </summary>
-        /// <param name="busName">Имя контроллера SPI.</param>
+        /// <param name="busName">Имя контроллера SPI, если такого контроллера не найдено, то вернет false.</param>
         /// <param name="chipSelect">Номер линии чип ChipSelect.</param>
         /// <param name="clock">Частота шины.</param>
         /// <param name="spiMode">Режим работы SPI.</param>

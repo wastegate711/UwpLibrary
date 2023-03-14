@@ -8,8 +8,9 @@ namespace MAX7219
 {
     public class Max7219 : IMax7219
     {
-        SpiDevice _max7219;
+        private SpiDevice _max7219;
 
+        /// <inheritdoc />
         public async Task<bool> Initialization(int chipSelect, int clock, SpiMode spiMode = SpiMode.Mode0)
         {
             SpiConnectionSettings spiConnectionSettings = new SpiConnectionSettings(chipSelect);
@@ -22,6 +23,7 @@ namespace MAX7219
             return _max7219 != null;
         }
 
+        /// <inheritdoc />
         public async Task<bool> Initialization(string busName, int chipSelect, int clock, SpiMode spiMode = SpiMode.Mode0)
         {
             SpiConnectionSettings spiConnectionSettings = new SpiConnectionSettings(chipSelect);
@@ -30,11 +32,16 @@ namespace MAX7219
             spiConnectionSettings.Mode = spiMode; //
             string bus = SpiDevice.GetDeviceSelector(busName);
             var aqs = await DeviceInformation.FindAllAsync(bus);
-            _max7219 = await SpiDevice.FromIdAsync(aqs.First().Id, spiConnectionSettings);
+
+            if (aqs.Any())
+            {
+                _max7219 = await SpiDevice.FromIdAsync(aqs.First().Id, spiConnectionSettings);
+            }
 
             return _max7219 != null;
         }
 
+        /// <inheritdoc />
         public void Max7219Config()
         {
             // Отключаем тест дисплея
@@ -51,11 +58,13 @@ namespace MAX7219
             _max7219.Write(new byte[] { (byte)Registers.Digit0, 0 });
         }
 
+        /// <inheritdoc />
         public void SendCmd(byte register, byte data)
         {
             _max7219.Write(new byte[] { register, data });
         }
 
+        /// <inheritdoc />
         public void DisplayNumber(int number, bool showAll = false)
         {
             if (!showAll)
