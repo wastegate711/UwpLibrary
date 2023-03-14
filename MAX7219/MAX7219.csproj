@@ -125,6 +125,7 @@
     <Compile Include="Max7219.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registers.cs" />
+    <Compile Include="SpecSymbols.cs" />
     <EmbeddedResource Include="Properties\MAX7219.rd.xml" />
   </ItemGroup>
   <ItemGroup>
