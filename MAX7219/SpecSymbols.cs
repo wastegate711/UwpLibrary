@@ -1,5 +1,8 @@
 ﻿namespace MAX7219
 {
+    /// <summary>
+    /// Коды спец символов.
+    /// </summary>
     public enum SpecSymbols : byte
     {
         /// <summary>

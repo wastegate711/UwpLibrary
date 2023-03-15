@@ -47,7 +47,7 @@ namespace MAX7219
             // Отключаем тест дисплея
             _max7219.Write(new byte[] { (byte)Registers.DisplayTest, 0 });
             // Включаем режим shutdown
-            _max7219.Write(new byte[] { (byte)Registers.Shutdown, 0 });
+            _max7219.Write(new byte[] { (byte)Registers.Shutdown, 1 });
             // Устанавливаем интенсивность свечения дисплея
             _max7219.Write(new byte[] { (byte)Registers.Intensity, 3 });
             // Устанавливаем количество работающих сегментов 
